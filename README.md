@@ -10,3 +10,14 @@ The microhap_main_final.ipynb notebook has all the modeling snippets and results
 MiCon outperforms popular methods in a heterogenous test dataset we used. 
 
 ![alt text](https://github.com/jagadhesh89/MiCon/blob/main/AUROC.jpg)
+
+COMMANDS USED FOR INDIVIDUAL BENCHMARKING TOOLS
+VERIFYBAMID 2:
+VerifyBamID2 --BamFile <bamFILE>--Reference <REFERENCEfile> --UDPath <gnomadfile> --BedPath <bedfile> --MeanPath af-only <gnomad_af> --DisableSanityCheck --Output <samplename>
+
+VERIFYBAMID:
+verifyBamID --vcf <vcffile_1000G> --bam <bamfile> --bai <bamfile>. bai --out <samplename>. verifybamid --ignoreRG --noPhoneHome --verbose --maxDepth 500 --precise --minQ 25
+
+CALCULATECONTAMINATION:
+gatk GetPileupSummaries -I <bamfile> -V <vcffile> -O outputs.table -L <MH.bed> --read-validation-stringency SILENT --QUIET
+gatk CalculateContamination -I outputs.table -O contamination.table
