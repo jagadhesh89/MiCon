@@ -22,3 +22,7 @@ verifyBamID --vcf <vcffile_1000G> --bam <bamfile> --bai <bamfile>. bai --out <sa
 ### CALCULATECONTAMINATION: (From GATK version 4.1.8.1)
 gatk GetPileupSummaries -I <bamfile> -V <vcffile> -O outputs.table -L <MH.bed> --read-validation-stringency SILENT --QUIET
 gatk CalculateContamination -I outputs.table -O contamination.table
+
+
+### Please cite:
+Balan J, Koganti T, Basu S, Dina MA, Artymiuk CJ, Barr Fritcher EG, Halverson KE, Wu X, Jenkinson G, Viswanatha DS. MICon Contamination Detection Workflow for Next-Generation Sequencing Laboratories Using Microhaplotype Loci and Supervised Learning. J Mol Diagn. 2023 Aug;25(8):602-610. doi: 10.1016/j.jmoldx.2023.05.001. Epub 2023 May 25. PMID: 37236547.
